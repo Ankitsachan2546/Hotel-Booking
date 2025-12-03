@@ -267,6 +267,44 @@ export const roomsData = [
     updatedAt: "2025-04-10T06:21:57.442Z",
     __v: 0,
   },
+  {
+    _id: "67f76385197ac559e4089b6b",
+    hotel: hotelsData[0],
+    roomType: "Ocean View Deluxe",
+    pricePerNight: 420,
+    description:
+      "Indulge in breathtaking ocean views from this elegant deluxe room. Featuring modern amenities and luxurious comfort, this room offers the perfect blend of relaxation and sophistication for your coastal retreat.",
+    amenities: ["Ocean View", "Balcony", "Mini Bar", "Premium WiFi"],
+    images: [
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop",
+    ],
+    isAvailable: true,
+    createdAt: "2025-04-10T06:21:57.442Z",
+    updatedAt: "2025-04-10T06:21:57.442Z",
+    __v: 0,
+  },
+  {
+    _id: "67f76385197ac559e4089b6c",
+    hotel: hotelsData[1],
+    roomType: "Business Executive Suite",
+    pricePerNight: 390,
+    description:
+      "Designed for the modern business traveler, this executive suite combines productivity and comfort. With a spacious work area, high-speed internet, and premium amenities, you'll stay productive while enjoying luxurious accommodations.",
+    amenities: ["Work Desk", "High-Speed WiFi", "Meeting Room Access", "Concierge"],
+    images: [
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=300&fit=crop",
+    ],
+    isAvailable: true,
+    createdAt: "2025-04-10T06:21:57.442Z",
+    updatedAt: "2025-04-10T06:21:57.442Z",
+    __v: 0,
+  },
 ];
 
 export const bookingData = [
