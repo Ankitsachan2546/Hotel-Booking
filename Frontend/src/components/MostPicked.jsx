@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom'; // ✅ Import Link correctly
 
 const MostPicked = () => {
   const { hotelData } = useContext(AppContext);
@@ -27,15 +28,15 @@ const MostPicked = () => {
           <span className="px-3 py-1 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full shadow-md">
             Explore
           </span>{" "}
-          our <span className="font-semibold text-gray-800">top-rated stays</span>, 
-          loved by guests for <span className="text-purple-600 font-medium">comfort</span> 
+          our <span className="font-semibold text-gray-800">top-rated stays</span>,
+          loved by guests for <span className="text-purple-600 font-medium">comfort</span>
           and <span className="text-pink-600 font-medium">location</span>.
         </motion.p>
       </div>
 
       {/* Hotel Cards */}
-      <div className="flex flex-wrap items-center justify-center gap-6 mt-12 max-w-6xl mx-auto">
-        {hotelData.map((item, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mt-12 max-w-[1600px] mx-auto place-items-center">
+        {hotelData.slice(0, 5).map((item, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
@@ -45,13 +46,13 @@ const MostPicked = () => {
               ease: "easeInOut",
               repeat: Infinity
             }}
-            className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer bg-white w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.33%-1.5rem)] lg:w-[calc(25%-1.5rem)]"
+            className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer bg-white w-full h-[320px]"
           >
             {/* Hotel Image */}
             <img
               src={item.image}
               alt={item.name || "Hotel"}
-              className="w-72 h-56 object-cover object-center rounded-xl transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
             />
 
             {/* Overlay Info */}
@@ -62,9 +63,23 @@ const MostPicked = () => {
               <h1 className="text-lg font-semibold">{item.name}</h1>
               <p className="text-sm">{item.address}</p>
               <h2 className="text-md font-bold mt-1">₹{item.price}</h2>
+              <Link to={`/hotels/${item.id}`}>
+                <button className="mt-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300">
+                  View Details
+                </button>
+              </Link>
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* View More Button */}
+      <div className="flex justify-center mt-12">
+        <Link to="/hotels">
+          <button className="px-8 py-3 rounded-full bg-slate-900 text-white font-bold text-lg shadow-lg hover:bg-gradient-to-r hover:from-amber-600 hover:to-orange-600 hover:shadow-orange-500/30 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+            View All Hotels <span className="text-xl">→</span>
+          </button>
+        </Link>
       </div>
     </div>
   )
