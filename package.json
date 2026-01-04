@@ -1,0 +1,13 @@
+{
+    "name": "hotel-booking-root",
+    "version": "1.0.0",
+    "description": "Root package for Vercel deployment",
+    "scripts": {
+        "build": "cd Frontend && npm install && npm run build"
+    },
+    "dependencies": {
+        "express": "^5.2.1",
+        "mongoose": "^9.0.0",
+        "dotenv": "^17.2.3"
+    }
+}
